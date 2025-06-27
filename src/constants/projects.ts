@@ -7,16 +7,16 @@ export type Project = {
 
 export const projects: Project[] = [
   {
-    title: "Macbook Mockup",
-    src: "https://aceternity.com/cdn-cgi/image/width=2048/https://assets.aceternity.com/macbook-scroll.png",
-    description: "A simple Macbook Scroll Mockup",
+    title: "E-Commerce",
+    src: "https://aceternity.com/cdn-cgi/image/width=1080/https://assets.aceternity.com/text-hover-effect.webp",
+    description: "Image selling E-Commerce with payment Integration",
     href: "#",
   },
   {
-    title: "Instant Feedback",
-    src: "https://aceternity.com/cdn-cgi/image/width=2048/https://assets.aceternity.com/animated-testimonials.webp",
+    title: "True Feedback",
+    src: "https://aceternity.com/cdn-cgi/image/width=1080/https://assets.aceternity.com/colourful-text.webp",
     description:
-      "A flight simulator that allows you to experience the thrill of flying",
+      "Get honest feedback of people because their identity is hidden",
     href: "#",
   },
   {
@@ -28,6 +28,19 @@ export const projects: Project[] = [
   {
     title: "Flight Simulator",
     src: "https://aceternity.com/cdn-cgi/image/width=2048/https://assets.aceternity.com/background-lines.webp",
+    description:
+      "A flight simulator that allows you to experience the thrill of flying",
+    href: "#",
+  },
+  {
+    title: "Macbook Mockup",
+    src: "https://aceternity.com/cdn-cgi/image/width=2048/https://assets.aceternity.com/macbook-scroll.png",
+    description: "A simple Macbook Scroll Mockup",
+    href: "#",
+  },
+  {
+    title: "Instant Feedback",
+    src: "https://aceternity.com/cdn-cgi/image/width=2048/https://assets.aceternity.com/animated-testimonials.webp",
     description:
       "A flight simulator that allows you to experience the thrill of flying",
     href: "#",

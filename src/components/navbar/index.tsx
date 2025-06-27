@@ -6,6 +6,7 @@ import Image from "next/image";
 import { Link } from "next-view-transitions";
 import {
   motion,
+  useMotionTemplate,
   useMotionValueEvent,
   useScroll,
   useTransform,
@@ -37,9 +38,10 @@ export const Navbar = () => {
   const [scrolled, setScrolled] = useState<boolean>(false);
 
   const y = useTransform(scrollY, [0, 300], [0, 10]);
-  const width = useTransform(scrollY, [0, 300], ["61%", "55%"]);
+  const width = useTransform(scrollY, [0, 100], ["61%", "55%"]);
 
-  // const filter = useMotionTemplate`blur(${useTransform(scrollY, [0, 300], [0, 10])}px)`;
+  // Create blur effect that increases with scroll
+  const backdropFilter = useMotionTemplate`blur(${useTransform(scrollY, [0, 300], [12, 40])}px)`;
 
   useMotionValueEvent(scrollY, "change", (latest) => {
     if (latest > 20) {
@@ -61,9 +63,16 @@ export const Navbar = () => {
           duration: 0.2,
           ease: "easeInOut",
         }}
-        className="fixed inset-x-0 top-0 z-50 mx-auto flex max-w-4xl items-center justify-between rounded-full bg-white px-3 py-2 backdrop-blur-sm dark:bg-neutral-900"
+        className="fixed inset-x-0 top-0 z-50 mx-auto flex max-w-4xl items-center justify-between rounded-full px-3 py-2"
       >
-        <Link href={"/"}>
+        <motion.div
+          style={{
+            backdropFilter: "blur(30px)",
+          }}
+          className="absolute inset-0 rounded-full bg-white/20 dark:bg-neutral-900/20"
+        />
+
+        <Link href={"/"} className="relative z-10">
           <Image
             className="h-10 w-10 rounded-full"
             src="/avatar.jpeg"
@@ -73,7 +82,7 @@ export const Navbar = () => {
           />
         </Link>
 
-        <div className="flex items-center">
+        <div className="relative z-10 flex items-center">
           {navItems.map((item, idx) => (
             <Link
               className="relative px-2 py-1 text-sm"
