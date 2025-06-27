@@ -1,0 +1,79 @@
+---
+title: "Getting Started with React"
+description: "A beginner-friendly guide to help you start building web applications with React."
+image: "/blog/images/intro-to-next.png"
+author: "Ayush Deshmukh"
+date: "2025-06-25"
+---
+
+# Getting Started with React
+
+React is a popular JavaScript library for building user interfaces, especially single-page applications. Developed by Facebook, React makes it painless to create interactive UIs by breaking them into reusable components. In this article, we'll cover the basics of React, its core concepts, and how you can get started with your first React app.
+
+## Why Choose React?
+
+- **Component-Based Architecture**: Build encapsulated components that manage their own state.
+- **Declarative Views**: Design simple views for each state in your application.
+- **Rich Ecosystem**: Leverage a vast ecosystem of libraries and tools.
+- **Strong Community Support**: Access a wealth of tutorials, documentation, and community help.
+
+## Setting Up Your First React App
+
+The easiest way to start is with Create React App:
+
+```bash
+npx create-react-app my-react-app
+cd my-react-app
+npm start
+```
+
+This sets up a new React project with a development server running at [http://localhost:3000](http://localhost:3000).
+
+## Core Concepts
+
+### Components
+
+Components are the building blocks of React applications. A component is a JavaScript function that returns JSX (a syntax extension for JavaScript):
+
+```jsx
+function Welcome(props) {
+  return <h1>Hello, {props.name}!</h1>;
+}
+```
+
+### State and Props
+
+- **Props**: Inputs to components, passed as attributes.
+- **State**: Local data managed within a component.
+
+```jsx
+import { useState } from "react";
+
+function Counter() {
+  const [count, setCount] = useState(0);
+  return (
+    <div>
+      <p>You clicked {count} times</p>
+      <button onClick={() => setCount(count + 1)}>Click me</button>
+    </div>
+  );
+}
+```
+
+### Handling Events
+
+React uses camelCase for event handlers:
+
+```jsx
+<button onClick={handleClick}>Click Me</button>
+```
+
+## Next Steps
+
+- Explore the [React documentation](https://reactjs.org/docs/getting-started.html).
+- Try building simple components and combining them.
+- Learn about hooks, context, and advanced patterns as you grow.
+
+## Conclusion
+
+React is a powerful tool for building modern web applications. With its component-based approach and strong community, it's a great choice for developers of all levels. Start experimenting and bring your ideas to life with React!
