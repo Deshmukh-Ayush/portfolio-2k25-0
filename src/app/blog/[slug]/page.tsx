@@ -1,8 +1,8 @@
 import { Container } from "@/components/container";
 import Scales from "@/components/scales";
 import { getBlogFrontMatter, getSingleBlog } from "@/utils/mdx";
-import Image from "next/image";
 import { redirect } from "next/navigation";
+import Image from "next/image";
 
 export async function generateMetadata({
   params,
@@ -39,17 +39,20 @@ export default async function SingleBlogPage({
 
   const { content, frontmatter } = blog;
 
-  // console.log(frontmatter);
-
   return (
     <div className="flex min-h-screen items-start justify-start">
       <Container className="min-h-screen px-8 md:pt-20 md:pb-10">
         <Scales />
-        <img
-          src={frontmatter.image}
-          alt={frontmatter.title}
-          className="mx-auto mb-20 max-h-96 w-full max-w-2xl rounded-2xl object-cover shadow-xl"
-        />
+        {frontmatter.image && (
+          <Image
+            src={frontmatter.image}
+            alt={frontmatter.title || "Blog post image"}
+            width={672} // max-w-2xl is typically 672px
+            height={384} // max-h-96 is typically 384px
+            className="mx-auto mb-20 max-h-96 w-full max-w-2xl rounded-2xl object-cover shadow-xl"
+            priority // Add this since it's likely above the fold
+          />
+        )}
         <div className="prose mx-auto">{content}</div>
       </Container>
     </div>

@@ -11,7 +11,7 @@ export default function ProjectsPage() {
         <Scales />
         <Heading>Projects</Heading>
         <Subheading>
-          I'm a software engineer with a passion for building scalable and
+          I&apos;m a software engineer with a passion for building scalable and
           effiecient systems. Founder and CEO of Cignara, Currently building
           scalable and efficient systems and helping brands grow.
         </Subheading>

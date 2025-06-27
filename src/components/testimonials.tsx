@@ -1,6 +1,7 @@
 import React from "react";
 import Marquee from "react-fast-marquee";
 import { SectionHeading } from "./section-heading";
+import Image from "next/image";
 
 export const Testimonials = () => {
   const data = [
@@ -68,11 +69,15 @@ const TestimonialCard = ({
     <div className="shadow-aceternity mx-4 flex h-50 w-full max-w-60 flex-col justify-between gap-4 rounded-xl p-4 transition-shadow duration-300 ease-in-out hover:shadow-lg">
       <p className="text-sm text-neutral-700">{quote}</p>
       <div className="flex w-40 items-center gap-4">
-        <img
-          src={avatar}
-          alt={name}
-          className="size-4 rounded-full object-cover"
-        />
+        {avatar && (
+          <Image
+            src={avatar}
+            alt={name || "User avatar"}
+            width={16} // size-4 is typically 16px
+            height={16} // size-4 is typically 16px
+            className="size-4 rounded-full object-cover"
+          />
+        )}
         <p className="text-sm text-neutral-500">{name}</p>
       </div>
     </div>

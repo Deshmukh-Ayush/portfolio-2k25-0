@@ -3,6 +3,7 @@ import {
   DraggableCardBody,
   DraggableCardContainer,
 } from "@/components/ui/draggable-card";
+import Image from "next/image";
 
 export function Collage() {
   const items = [
@@ -53,11 +54,15 @@ export function Collage() {
     <DraggableCardContainer className="relative flex min-h-[30rem] w-full items-center justify-center overflow-clip">
       {items.map((item, index) => (
         <DraggableCardBody key={index} className={item.className}>
-          <img
-            src={item.image}
-            alt={item.title}
-            className="pointer-events-none relative z-10 h-40 w-80 object-cover"
-          />
+          {item.image && (
+            <Image
+              src={item.image}
+              alt={item.title || "Collage item"}
+              width={320} // w-80 is typically 320px
+              height={160} // h-40 is typically 160px
+              className="pointer-events-none relative z-10 h-40 w-80 object-cover"
+            />
+          )}
           <h3 className="mt-4 text-center text-base font-bold text-neutral-700 dark:text-neutral-300">
             {item.title}
           </h3>

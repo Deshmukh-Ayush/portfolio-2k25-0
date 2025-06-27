@@ -80,7 +80,7 @@ export const Timeline = () => {
             {year.title}
           </motion.h2>
           <div className="flex flex-col gap-4">
-            {year.content.map((item, index) => (
+            {year.content.map((item) => (
               <div key={item.title} className="pl-4">
                 <div className="mt-3 flex items-start">
                   <Step isInView={isInView} idx={idx}></Step>

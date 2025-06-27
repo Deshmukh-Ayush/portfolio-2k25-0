@@ -3,7 +3,6 @@
 import Image from "next/image";
 import React from "react";
 import { motion } from "motion/react";
-import { Subheading } from "./subheading";
 import { Project, projects as defaultProjects } from "@/constants/projects";
 import { SectionHeading } from "./section-heading";
 

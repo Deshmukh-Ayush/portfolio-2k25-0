@@ -14,7 +14,7 @@ export default function Home() {
         <Scales />
         <Heading>Ayush Deshmukh</Heading>
         <Subheading>
-          I'm a software engineer with a passion for building scalable and
+          I&apos;m a software engineer with a passion for building scalable and
           efficient systems. Founder and CEO of Cignara, Currently building
           scalable and efficient systems and helping brands grow.
         </Subheading>

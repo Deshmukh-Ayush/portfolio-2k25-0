@@ -5,7 +5,7 @@ import { getBlogs, BlogListItem } from "@/utils/mdx";
 import { Metadata } from "next";
 import { Link } from "next-view-transitions";
 
-const metaData: Metadata = {
+export const metadata: Metadata = {
   title: "All Blogs - Ayush Deshmukh",
   description:
     "All blogs by Ayush Deshmukh, a software engineer with a passion for building scalable and efficient systems.",
@@ -13,7 +13,6 @@ const metaData: Metadata = {
 
 export default async function BlogsPage() {
   const allBlogs: BlogListItem[] = await getBlogs();
-  // console.log("all blogs", allBlogs);
 
   const truncate = (str: string, length: number) => {
     return str.length > length ? str.substring(0, length) + "..." : str;
@@ -24,7 +23,7 @@ export default async function BlogsPage() {
         <Scales />
         <Heading>All Blogs</Heading>
         <div className="flex flex-col gap-8 px-4 py-10">
-          {allBlogs.map((blog, idx) => (
+          {allBlogs.map((blog) => (
             <Link key={blog.title} href={`/blog/${blog.slug}`}>
               <div className="flex items-center justify-between">
                 <h2 className="text-primary text-base font-bold tracking-tight">
