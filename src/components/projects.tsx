@@ -13,7 +13,7 @@ export const Projects = ({
 }) => {
   return (
     <div className="shadow-section-inset my-4 border-y border-neutral-100 px-4">
-      <SectionHeading delay={0.2}>A lifetime in projects</SectionHeading>
+      <SectionHeading delay={0.2}>Recent Projects</SectionHeading>
       <div className="grid grid-cols-1 gap-2 py-4 md:grid-cols-3">
         {projects.map((project, idx) => (
           <motion.div

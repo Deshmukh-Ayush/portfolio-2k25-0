@@ -67,7 +67,7 @@ export const Navbar = () => {
       >
         <motion.div
           style={{
-            backdropFilter: "blur(30px)",
+            backdropFilter,
           }}
           className="absolute inset-0 rounded-full bg-white/20 dark:bg-neutral-900/20"
         />
